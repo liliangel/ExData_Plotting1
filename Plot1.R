@@ -17,7 +17,7 @@ data <- read.table(pipe("findstr /B /R ^[1-2]/2/2007 household_power_consumption
 data$Date_time <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 
 ## Generating and Save the Plot1 or the histogram " Global Active Power".
-
+png()
 png(filename = "plot1.png",width = 480, height = 480, units = "px")
 hist(data$Global_active_power, col = "red", main = paste("Global Active Power"), xlab = "Global Active Power (kilowatts)")
 dev.off()

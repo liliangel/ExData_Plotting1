@@ -18,7 +18,7 @@ data <- read.table(pipe("findstr /B /R ^[1-2]/2/2007 household_power_consumption
 data$Date_time <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 
 ## Generating and Save the Plot2 is a graph of "Global Active Power" vs date - time.
-
+png()
 png(filename = "plot2.png",width = 480, height = 480, units = "px")
 plot(data$Date_time,data$Global_active_power, type = "l",ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.off()

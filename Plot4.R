@@ -17,7 +17,7 @@ data <- read.table(pipe("findstr /B /R ^[1-2]/2/2007 household_power_consumption
 data$Date_time <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 
 ## Generating and Save the Plot4 is a set of graphs.
-
+png()
 png(filename = "plot4.png",width = 480, height = 480, units = "px")
 
 par(mfrow = c(2,2), cex= 0.5)

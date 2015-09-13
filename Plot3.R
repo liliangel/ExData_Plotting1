@@ -17,7 +17,7 @@ data <- read.table(pipe("findstr /B /R ^[1-2]/2/2007 household_power_consumption
 data$Date_time <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 
 ## Generating and Save the Plot3 is a graph of  " Energy Sub metering" vs date - time.
-
+png()
 png(filename = "plot3.png",width = 480, height = 480, units = "px")
 
 with(data, {
